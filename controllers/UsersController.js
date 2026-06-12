@@ -1,7 +1,7 @@
 const Users = require("../models/Users");
 
 // ➡️ Create User
-async function createUser(req, res) {
+async function createUsers(req, res) {
   try {
     let data = new Users(req.body);
     await data.save();
@@ -37,7 +37,7 @@ async function getUsers(req, res) {
 }
 
 // ➡️ Get Single User
-async function getUserById(req, res) {
+async function getUsersById(req, res) {
   try {
     let data = await Users.findById(req.params._id);
     if (data) {
@@ -51,7 +51,7 @@ async function getUserById(req, res) {
 }
 
 // ➡️ Update User
-async function updateUser(req, res) {
+async function updateUsers(req, res) {
   try {
     let data = await Users.findById(req.params._id);
     if (data) {
@@ -71,7 +71,7 @@ async function updateUser(req, res) {
 }
 
 // ➡️ Delete User
-async function deleteUser(req, res) {
+async function deleteUsers(req, res) {
   try {
     let data = await Users.findById(req.params._id);
     if (data) {
@@ -86,9 +86,9 @@ async function deleteUser(req, res) {
 }
 
 module.exports = {
-  createUser,
+  createUsers,
   getUsers,
   getUserById,
-  updateUser,
-  deleteUser
+  updateUsers,
+  deleteUsers
 };
