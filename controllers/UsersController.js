@@ -36,8 +36,8 @@ async function getUsers(req, res) {
   }
 }
 
-// ➡️ Get Single User
-async function getUsersById(req, res) {
+// ➡️ Get Single User by ID
+async function getUserById(req, res) {
   try {
     let data = await Users.findById(req.params._id);
     if (data) {
@@ -88,7 +88,7 @@ async function deleteUsers(req, res) {
 module.exports = {
   createUsers,
   getUsers,
-  getUserById,
+  getUserById,   // ✅ ab function ka naam sahi hai
   updateUsers,
   deleteUsers
 };

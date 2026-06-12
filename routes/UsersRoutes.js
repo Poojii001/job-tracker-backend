@@ -3,7 +3,7 @@ const UsersRouter = require("express").Router();
 const {
   createUsers,
   getUsers,
-  getUsersById,
+  getUserById,   // ✅ spelling match karo controller ke sath
   updateUsers,
   deleteUsers
 } = require("../controllers/UsersController");
@@ -15,7 +15,7 @@ UsersRouter.post("/", createUsers);
 UsersRouter.get("/", getUsers);
 
 // ➡️ Get Single User by ID
-UsersRouter.get("/:_id", getUsersById);
+UsersRouter.get("/:_id", getUserById);   // ✅ ab sahi function hai
 
 // ➡️ Update User
 UsersRouter.put("/:_id", updateUsers);

@@ -1,8 +1,17 @@
-const express= require("express")
-require ("dotenv").config()
+const express = require("express");
+require("dotenv").config();
 
-const app = express()                      // all incoming request ko parse krke bhejjega
+require("./db-connect")
+const app = express();  
+app.use(express.json()); // incoming request body ko parse karega
 
+// ✅ Import UsersRoutes
+const userRoutes = require("./routes/UsersRoutes");
+// app.use("/users", userRoutes);
+app.use("/api/users", userRoutes); 
 
-let port = process.env.PORT || 8000
-app.listen(port,console.log(`Server is Running at http://localhost:${port}`))
+// ✅ Port setup
+let port = process.env.PORT || 8000;
+app.listen(port, () => {
+  console.log(`Server is Running at http://localhost:${port}`);
+});
