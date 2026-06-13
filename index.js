@@ -7,8 +7,12 @@ app.use(express.json()); // incoming request body ko parse karega
 
 // ✅ Import UsersRoutes
 const userRoutes = require("./routes/UsersRoutes");
+const jobRoutes = require("./routes/JobsRoutes");
 // app.use("/users", userRoutes);
 app.use("/api/users", userRoutes); 
+app.use("/api/jobs", jobRoutes); 
+
+
 
 // ✅ Port setup
 let port = process.env.PORT || 8000;
