@@ -11,12 +11,15 @@ const jobRoutes = require("./routes/JobsRoutes");
 const reportsRoutes = require("./routes/ReportsRoutes");
 const applicationsRoutes = require("./routes/ApplicationsRoutes");
 const companiesRoutes = require("./routes/CompaniesRoutes");
+const notificationsRoutes = require("./routes/NotificationsRoutes");
 // app.use("/users", userRoutes);
+
 app.use("/api/users", userRoutes); 
 app.use("/api/jobs", jobRoutes); 
 app.use("/api/reports", reportsRoutes);
 app.use("/api/applications", applicationsRoutes);
 app.use("/api/companies", companiesRoutes);
+app.use("/api/notifications", notificationsRoutes);
 
 
 
