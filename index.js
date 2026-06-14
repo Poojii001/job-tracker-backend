@@ -9,10 +9,12 @@ app.use(express.json()); // incoming request body ko parse karega
 const userRoutes = require("./routes/UsersRoutes");
 const jobRoutes = require("./routes/JobsRoutes");
 const reportsRoutes = require("./routes/ReportsRoutes");
+const applicationsRoutes = require("./routes/ApplicationsRoutes");
 // app.use("/users", userRoutes);
 app.use("/api/users", userRoutes); 
 app.use("/api/jobs", jobRoutes); 
 app.use("/api/reports", reportsRoutes);
+app.use("/api/applications", applicationsRoutes);
 
 
 
